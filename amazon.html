@@ -9,22 +9,40 @@
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <div class="logo">amazon</div>
+  <div class="nav-left">
+    <span class="logo">amazon</span>
+    <span class="location">Deliver to <b>India</b></span>
+  </div>
 
   <div class="search-bar">
+    <select>
+      <option>All</option>
+      <option>Electronics</option>
+      <option>Fashion</option>
+    </select>
     <input type="text" placeholder="Search Amazon">
     <button>🔍</button>
   </div>
 
-  <div class="cart">
-    🛒 Cart <span id="cart-count">0</span>
+  <div class="nav-right">
+    <div class="nav-item">
+      <small>Hello, Sign in</small>
+      <b>Account & Lists</b>
+    </div>
+    <div class="nav-item">
+      <small>Returns</small>
+      <b>& Orders</b>
+    </div>
+    <div class="cart">
+      🛒 Cart <span id="cart-count">0</span>
+    </div>
   </div>
 </header>
 
 <!-- BANNER -->
 <section class="banner">
   <h1>Amazon Clone</h1>
-  <p>Simple frontend e-commerce project</p>
+  <p>Frontend E-commerce Project</p>
 </section>
 
 <!-- PRODUCTS -->
@@ -34,26 +52,26 @@
     <img src="https://images.unsplash.com/photo-1585386959984-a41552231693">
     <h3>Wireless Headphones</h3>
     <p class="price">₹2999</p>
-    <button onclick="addToCart('Wireless Headphones', 2999)">Add to Cart</button>
+    <button onclick="addToCart('Wireless Headphones',2999)">Add to Cart</button>
   </div>
 
   <div class="product-card">
     <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
     <h3>Smart Phone</h3>
     <p class="price">₹14999</p>
-    <button onclick="addToCart('Smart Phone', 14999)">Add to Cart</button>
+    <button onclick="addToCart('Smart Phone',14999)">Add to Cart</button>
   </div>
 
   <div class="product-card">
     <img src="https://images.unsplash.com/photo-1598971861713-54ad16a7e72e">
     <h3>Laptop Backpack</h3>
     <p class="price">₹1299</p>
-    <button onclick="addToCart('Laptop Backpack', 1299)">Add to Cart</button>
+    <button onclick="addToCart('Laptop Backpack',1299)">Add to Cart</button>
   </div>
 
 </section>
 
-<!-- PAYMENT / CART SUMMARY -->
+<!-- ORDER SUMMARY -->
 <section class="payment">
   <h2>Order Summary</h2>
 
@@ -62,7 +80,7 @@
       <tr>
         <th>Item</th>
         <th>Price (₹)</th>
-        <th>Quantity</th>
+        <th>Qty</th>
         <th>Total (₹)</th>
       </tr>
     </thead>
@@ -78,3 +96,4 @@
 <script src="amazon.js"></script>
 </body>
 </html>
+
