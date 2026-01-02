@@ -1,36 +1,39 @@
 let cart = {};
-let cartCount = 0;
+let totalPrice = 0;
 
 function addToCart(item, price) {
   if (cart[item]) {
-    cart[item].quantity++;
+    cart[item].qty++;
   } else {
-    cart[item] = { price: price, quantity: 1 };
+    cart[item] = { price: price, qty: 1 };
   }
-
-  cartCount++;
-  document.getElementById("cart-count").innerText = cartCount;
   updateCart();
 }
 
 function updateCart() {
-  let cartItems = document.getElementById("cart-items");
+  const cartItems = document.getElementById("cart-items");
+  const totalPriceEl = document.getElementById("total-price");
+  const cartCount = document.getElementById("cart-count");
+
   cartItems.innerHTML = "";
-  let totalPrice = 0;
+  totalPrice = 0;
+  let count = 0;
 
   for (let item in cart) {
-    let itemTotal = cart[item].price * cart[item].quantity;
+    let itemTotal = cart[item].price * cart[item].qty;
     totalPrice += itemTotal;
+    count += cart[item].qty;
 
     cartItems.innerHTML += `
       <tr>
         <td>${item}</td>
         <td>${cart[item].price}</td>
-        <td>${cart[item].quantity}</td>
+        <td>${cart[item].qty}</td>
         <td>${itemTotal}</td>
       </tr>
     `;
   }
 
-  document.getElementById("total-price").innerText = totalPrice;
+  totalPriceEl.innerText = totalPrice;
+  cartCount.innerText = count;
 }
